@@ -7,6 +7,10 @@ TagManager:
   - KillZone
   - Health
   - Hazard
+  - Enemy
+  - Enemy2
+  - Hazard2
+  - BasicEnemy
   layers:
   - Default
   - TransparentFX

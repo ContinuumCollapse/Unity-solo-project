@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     public float jumpRayDistance = 1.1f;
 
     public int health = 5;
-    public int maxhealth = 5;
+    public int maxhealth = 10;
     private void Start()
     {
         jumpRay = new Ray(transform.position, -transform.position);
@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
         
         if ((other.tag == "Health") && (health < maxhealth))
         {
-            health += 1;    // or health ++; for one
+            health += 10;    // or health ++; for one
             Destroy(other.gameObject); //or other.gameObject.SetActive(false);
 
         }
@@ -93,9 +93,27 @@ public class PlayerController : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision) //enter is once every collison, stay is constant while collision is true
     {
-        if(collision.gameObject.tag == "Hazard")
-        {  
-            health--; 
-        }    
+        if (collision.gameObject.tag == "Hazard")
+        {
+            health--;
+        }
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            health--;
+        }
+    }
+        private void OnCollisionStay(Collision collision) //enter is once every collison, stay is constant while collision is true
+    {
+        if (collision.gameObject.tag == "Hazard2")
+        {
+            health--;
+        }
+
+        if (collision.gameObject.tag == "Enemy2")
+        {
+            health--;
+        }
     }
 }
+
