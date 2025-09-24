@@ -20,8 +20,8 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 5f;
     public float jumpHeight = 10f;
-    public float groundDetectLength = .5f;
     public float interactDistance = 1f;
+    public float jumpRayDistance = 1.1f;
 
     public int health = 5;
     public int maxhealth = 5;
@@ -96,16 +96,10 @@ public class PlayerController : MonoBehaviour
     // If raycast downward sees collider, player can jump.
     public void Jump()
     {
-        if (Physics.Raycast(jumpRay, groundDetectLength))
+        if (Physics.Raycast(jumpRay, jumpRayDistance))
             rb.AddForce(transform.up * jumpHeight, ForceMode.Impulse);
     }
-    public void fireModeSwitch()
-    {
-        if (currentWeapon.weaponID == 1)
-        {
-            currentWeapon.GetComponent<Rifle>().changeFireMode();
-        }
-    }
+    
     public void Attack(InputAction.CallbackContext context)
     {
         if (currentWeapon)
