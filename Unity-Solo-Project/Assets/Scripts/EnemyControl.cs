@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.SceneManagement;
+
 public class EnemyControl : MonoBehaviour
 {
     NavMeshAgent agent;
@@ -32,7 +32,7 @@ public class EnemyControl : MonoBehaviour
             health = 0;
 
         }
-
+        
     }
     private void OnCollisionEnter(Collision collision) //enter is once every collison, stay is constant while collision is true
     {
@@ -40,7 +40,12 @@ public class EnemyControl : MonoBehaviour
         {
             health--;
         }
-        
+       
+        if (collision.gameObject.tag == "proj")
+        {
+            health = 0;
+
+        }
     }
     private void OnCollisionStay(Collision collision) //enter is once every collison, stay is constant while collision is true
     {
