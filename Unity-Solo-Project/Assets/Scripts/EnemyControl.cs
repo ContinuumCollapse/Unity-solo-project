@@ -43,7 +43,7 @@ public class EnemyControl : MonoBehaviour
        
         if (collision.gameObject.tag == "proj")
         {
-            health = 0;
+            health--;
 
         }
     }

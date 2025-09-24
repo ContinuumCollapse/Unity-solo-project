@@ -284,11 +284,12 @@ MonoBehaviour:
   firePoint: {fileID: 0}
   firingDirection: {fileID: 0}
   canFire: 1
+  reloading: 0
   holdToAttack: 0
   weaponID: 0
   weaponName: Pistol
-  projLifespan: 1
-  projVelocity: 10000
+  projLifespan: 0.4
+  projVelocity: 1000
   reloadCooldown: 1
   rof: 0.1
   fireModes: 0
