@@ -40,6 +40,7 @@ public class EnemyControl : MonoBehaviour
         {
             health--;
         }
+        
     }
     private void OnCollisionStay(Collision collision) //enter is once every collison, stay is constant while collision is true
     {

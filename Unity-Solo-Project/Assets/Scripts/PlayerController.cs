@@ -4,77 +4,154 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    Vector3 cameraOffset = new Vector3(0, .5f, .2f);
-    Vector2 cameraRotation = Vector2.zero;
     Camera playerCam;
-    InputAction lookAxis;
     Rigidbody rb;
     Ray jumpRay;
+    Ray interactRay;
+    RaycastHit interactHit;
+    GameObject pickupObj;
 
-    float inputX;
-    float inputY;
+    public PlayerInput input;
+    public Transform weaponSlot;
+    public Weapon currentWeapon;
 
-    public float Xsensitivity = .1f;
-    public float Ysensitivity = .1f;
+    float verticalMove;
+    float horizontalMove;
+
     public float speed = 5f;
-    public float camRotationLimit = 90;
     public float jumpHeight = 10f;
-    public float jumpRayDistance = 1.1f;
+    public float groundDetectLength = .5f;
+    public float interactDistance = 1f;
 
     public int health = 5;
-    public int maxhealth = 10;
-    private void Start()
+    public int maxhealth = 5;
+
+    public bool attacking = false;
+
+
+    public void Start()
     {
-        jumpRay = new Ray(transform.position, -transform.position);
+        input = GetComponent<PlayerInput>();
+        jumpRay = new Ray(transform.position, -transform.up);
+        interactRay = new Ray(transform.position, transform.forward);
         rb = GetComponent<Rigidbody>();
         playerCam = Camera.main;
-        lookAxis = GetComponent<PlayerInput>().currentActionMap.FindAction("Look");
+        weaponSlot = playerCam.transform.GetChild(0);
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
     private void Update()
     {
-        if(health <= 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);  
-        }
+        if (health <= 0)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
-        // Camera Handler
-        Quaternion playerRotation = Quaternion.identity;
-        playerRotation.y = playerCam.transform.rotation.y;
-        playerRotation.w = playerCam.transform.rotation.w;
+
+        // Player Rotation (Horiztonally)
+        Quaternion playerRotation = playerCam.transform.rotation;
+        playerRotation.x = 0;
+        playerRotation.z = 0;
         transform.rotation = playerRotation;
 
+
+        // Movement System (Take vert/horiz input and convert to 3D movement)
+        Vector3 temp = rb.linearVelocity;
+
+        temp.x = verticalMove * speed;
+        temp.z = horizontalMove * speed;
+
         jumpRay.origin = transform.position;
-        jumpRay.direction = -transform.up;  
+        jumpRay.direction = -transform.up;
 
-        // Movement System
-        Vector3 tempMove = rb.linearVelocity;
+        interactRay.origin = playerCam.transform.position;
+        interactRay.direction = playerCam.transform.forward;
 
+        if (Physics.Raycast(interactRay, out interactHit, interactDistance))
+        {
+            if (interactHit.collider.gameObject.tag == "weapon")
+            {
+                pickupObj = interactHit.collider.gameObject;
+            }
+        }
+        else
+            pickupObj = null;
 
-        tempMove.x = inputY * speed;
-        tempMove.z = inputX * speed;
+        if (currentWeapon)
+            if (currentWeapon.holdToAttack && attacking)
+                currentWeapon.fire();
 
-        rb.linearVelocity = (tempMove.x * transform.forward) + 
-            (tempMove.y * transform.up) +
-            (tempMove.z * transform.right);
+        rb.linearVelocity = (temp.x * transform.forward) +
+                            (temp.y * transform.up) +
+                            (temp.z * transform.right);
     }
-
+    // Read player input and convert to values to be used by rb for movement
     public void Move(InputAction.CallbackContext context)
     {
-        Vector2 InputAxis = context.ReadValue<Vector2>();
+        Vector2 inputAxis = context.ReadValue<Vector2>();
 
-        inputX = InputAxis.x;
-        inputY = InputAxis.y;   
-
+        verticalMove = inputAxis.y;
+        horizontalMove = inputAxis.x;
     }
+    // If raycast downward sees collider, player can jump.
     public void Jump()
     {
-        if (Physics.Raycast(jumpRay, jumpRayDistance))
+        if (Physics.Raycast(jumpRay, groundDetectLength))
             rb.AddForce(transform.up * jumpHeight, ForceMode.Impulse);
     }
+    public void fireModeSwitch()
+    {
+        if (currentWeapon.weaponID == 1)
+        {
+            currentWeapon.GetComponent<Rifle>().changeFireMode();
+        }
+    }
+    public void Attack(InputAction.CallbackContext context)
+    {
+        if (currentWeapon)
+        {
+            if (currentWeapon.holdToAttack)
+            {
+                if (context.ReadValueAsButton())
+                    attacking = true;
+                else
+                    attacking = false;
+            }
 
+            else
+                if (context.ReadValueAsButton())
+                currentWeapon.fire();
+        }
+    }
+    public void Reload()
+    {
+        if (currentWeapon)
+            if (!currentWeapon.reloading)
+                currentWeapon.reload();
+    }
+    public void Interact()
+    {
+        if (pickupObj)
+        {
+            if (pickupObj.tag == "weapon")
+            {
+                if (currentWeapon)
+                    DropWeapon();
+
+                pickupObj.GetComponent<Weapon>().equip(this);
+            }
+            pickupObj = null;
+        }
+        else
+            Reload();
+    }
+    public void DropWeapon()
+    {
+        if (currentWeapon)
+        {
+            currentWeapon.GetComponent<Weapon>().unequip();
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "KillZone")

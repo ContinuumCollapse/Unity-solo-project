@@ -11,6 +11,8 @@ TagManager:
   - Enemy2
   - Hazard2
   - BasicEnemy
+  - weapon
+  - proj
   layers:
   - Default
   - TransparentFX
