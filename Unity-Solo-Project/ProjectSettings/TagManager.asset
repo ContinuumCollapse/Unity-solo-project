@@ -13,6 +13,10 @@ TagManager:
   - BasicEnemy
   - weapon
   - proj
+  - ui_health
+  - ui_ammo
+  - ui_clip
+  - gm
   layers:
   - Default
   - TransparentFX
