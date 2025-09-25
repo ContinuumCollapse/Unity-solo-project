@@ -17,6 +17,10 @@ TagManager:
   - ui_ammo
   - ui_clip
   - gm
+  - pause
+  - killzone
+  - ui_pause
+  - weaponUI
   layers:
   - Default
   - TransparentFX
