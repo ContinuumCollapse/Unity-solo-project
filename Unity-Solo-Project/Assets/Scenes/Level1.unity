@@ -9826,7 +9826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5116666104138776591, guid: e8515968026af9b428ec6197a33832ab, type: 3}
       propertyPath: projVelocity
-      value: 1000
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 8902325792468435956, guid: e8515968026af9b428ec6197a33832ab, type: 3}
       propertyPath: m_Name
