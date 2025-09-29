@@ -123,4 +123,14 @@ public class Weapon : MonoBehaviour
         reloading = false;
         canFire = true;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Ammo")
+        {
+            ammo += 10;    // or health ++; for one
+            Destroy(other.gameObject); //or other.gameObject.SetActive(false);
+        }
+
+    }
 }

@@ -24,6 +24,7 @@ public class EnemyControl : MonoBehaviour
         {
             Destroy(gameObject);
         }
+       
     }
     private void OnTriggerEnter(Collider other)
     {

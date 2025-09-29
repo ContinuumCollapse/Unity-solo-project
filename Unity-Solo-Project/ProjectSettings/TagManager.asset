@@ -21,6 +21,7 @@ TagManager:
   - killzone
   - ui_pause
   - weaponUI
+  - Ammo
   layers:
   - Default
   - TransparentFX
