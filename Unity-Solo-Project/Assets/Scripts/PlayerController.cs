@@ -160,6 +160,7 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject); //or other.gameObject.SetActive(false);
 
         }
+        
 
     }
     private void OnCollisionEnter(Collision collision) //enter is once every collison, stay is constant while collision is true
