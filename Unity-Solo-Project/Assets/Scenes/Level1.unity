@@ -3947,8 +3947,8 @@ MonoBehaviour:
   jumpHeight: 9
   interactDistance: 20
   jumpRayDistance: 1.1
-  health: 1000
-  maxhealth: 1500
+  health: 700
+  maxhealth: 800
   attacking: 0
 --- !u!1 &818425410
 GameObject:
@@ -9745,11 +9745,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7341738044363481342, guid: 0d714ca51ad736744b099ef845b763cd, type: 3}
       propertyPath: rof
-      value: 0.01
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7341738044363481342, guid: 0d714ca51ad736744b099ef845b763cd, type: 3}
       propertyPath: projVelocity
-      value: 250
+      value: 850
       objectReference: {fileID: 0}
     - target: {fileID: 7341738044363481342, guid: 0d714ca51ad736744b099ef845b763cd, type: 3}
       propertyPath: firingDirection
