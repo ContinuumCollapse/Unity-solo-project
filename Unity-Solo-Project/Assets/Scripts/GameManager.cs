@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
 
     GameObject weaponUI;
     GameObject pauseMenu;
-
+    GameObject NextLevel;
+    
     Image healthBar;
     TextMeshProUGUI ammoCounter;
     TextMeshProUGUI clip;
@@ -27,6 +28,10 @@ public class GameManager : MonoBehaviour
             pauseMenu = GameObject.FindGameObjectWithTag("ui_pause");
 
             pauseMenu.SetActive(false);
+            
+            NextLevel = GameObject.FindGameObjectWithTag("ui_nextLevel");
+
+            NextLevel.SetActive(false);
 
             healthBar = GameObject.FindGameObjectWithTag("ui_health").GetComponent<Image>();
             ammoCounter = GameObject.FindGameObjectWithTag("ui_ammo").GetComponent<TextMeshProUGUI>();
@@ -48,6 +53,17 @@ public class GameManager : MonoBehaviour
                 ammoCounter.text = "Ammo: " + player.currentWeapon.ammo;
                 clip.text = "Clip: " + player.currentWeapon.clip + " / " + player.currentWeapon.clipSize;
             }
+        }
+
+        //if (health <= 0)
+        //NextLevel.SetActive(true);
+
+        //if (health <= 0)
+        {
+            //Time.timeScale = 0;
+
+            // Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
         }
     }
 
