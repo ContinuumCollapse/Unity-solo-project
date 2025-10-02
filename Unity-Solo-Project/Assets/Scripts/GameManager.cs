@@ -93,6 +93,10 @@ public class GameManager : MonoBehaviour
     {
         LoadLevel(0);
     }
+    public void CurrentLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     public void QuitGame()
     {
         Application.Quit();

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -10,7 +11,7 @@ public class PlayerController : MonoBehaviour
     Ray interactRay;
     RaycastHit interactHit;
     GameObject pickupObj;
-
+    GameObject gameoverscreen;
     public PlayerInput input;
     public Transform weaponSlot;
     public Weapon currentWeapon;
@@ -31,6 +32,19 @@ public class PlayerController : MonoBehaviour
 
     public void Start()
     {
+        if (SceneManager.GetActiveScene().buildIndex >= 1)
+        {
+            gameoverscreen = GameObject.FindGameObjectWithTag("ui_gameOver");
+
+            gameoverscreen.SetActive(false);
+            
+            Time.timeScale = 1;
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+        }
+        
         input = GetComponent<PlayerInput>();
         jumpRay = new Ray(transform.position, -transform.up);
         interactRay = new Ray(transform.position, transform.forward);
@@ -45,11 +59,21 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         if (health <= 0)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+           gameoverscreen.SetActive(true);
+    
+        if (health <= 0)
+        {
+            Time.timeScale = 0;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+    //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
 
-        // Player Rotation (Horiztonally)
-        Quaternion playerRotation = playerCam.transform.rotation;
+    // Player Rotation (Horiztonally)
+    Quaternion playerRotation = playerCam.transform.rotation;
         playerRotation.x = 0;
         playerRotation.z = 0;
         transform.rotation = playerRotation;
@@ -187,5 +211,7 @@ public class PlayerController : MonoBehaviour
             health--;
         }
     }
+
+   
 }
 

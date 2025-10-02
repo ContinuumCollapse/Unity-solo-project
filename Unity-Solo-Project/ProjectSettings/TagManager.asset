@@ -22,6 +22,8 @@ TagManager:
   - ui_pause
   - weaponUI
   - Ammo
+  - ui_gameOver
+  - ui_nextLevel
   layers:
   - Default
   - TransparentFX
