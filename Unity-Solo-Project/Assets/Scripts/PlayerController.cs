@@ -37,14 +37,14 @@ public class PlayerController : MonoBehaviour
             gameoverscreen = GameObject.FindGameObjectWithTag("ui_gameOver");
 
             gameoverscreen.SetActive(false);
-            
+
             Time.timeScale = 1;
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
         }
-        
+
         input = GetComponent<PlayerInput>();
         jumpRay = new Ray(transform.position, -transform.up);
         interactRay = new Ray(transform.position, transform.forward);
@@ -59,8 +59,8 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         if (health <= 0)
-           gameoverscreen.SetActive(true);
-    
+            gameoverscreen.SetActive(true);
+
         if (health <= 0)
         {
             Time.timeScale = 0;
@@ -69,11 +69,11 @@ public class PlayerController : MonoBehaviour
             Cursor.visible = true;
         }
 
-    //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
 
-    // Player Rotation (Horiztonally)
-    Quaternion playerRotation = playerCam.transform.rotation;
+        // Player Rotation (Horiztonally)
+        Quaternion playerRotation = playerCam.transform.rotation;
         playerRotation.x = 0;
         playerRotation.z = 0;
         transform.rotation = playerRotation;
@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(jumpRay, jumpRayDistance))
             rb.AddForce(transform.up * jumpHeight, ForceMode.Impulse);
     }
-    
+
     public void Attack(InputAction.CallbackContext context)
     {
         if (currentWeapon)
@@ -177,14 +177,14 @@ public class PlayerController : MonoBehaviour
             health = 0;
 
         }
-        
+
         if ((other.tag == "Health") && (health < maxhealth))
         {
             health += 300;    // or health ++; for one
             Destroy(other.gameObject); //or other.gameObject.SetActive(false);
 
         }
-        
+
 
     }
     private void OnCollisionEnter(Collision collision) //enter is once every collison, stay is constant while collision is true
@@ -199,7 +199,7 @@ public class PlayerController : MonoBehaviour
             health--;
         }
     }
-        private void OnCollisionStay(Collision collision) //enter is once every collison, stay is constant while collision is true
+    private void OnCollisionStay(Collision collision) //enter is once every collison, stay is constant while collision is true
     {
         if (collision.gameObject.tag == "Hazard2")
         {
@@ -212,6 +212,5 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-   
-}
 
+}

@@ -18,7 +18,7 @@ public class EnemyControl : MonoBehaviour
         // Update is called once per frame
         private void Update()
     {
-        agent.destination = GameObject.Find("Player").transform.position;
+        agent.destination = GameObject.Find("player").transform.position;
         
         if (health <= 0)
         {
