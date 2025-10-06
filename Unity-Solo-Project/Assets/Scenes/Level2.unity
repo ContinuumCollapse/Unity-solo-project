@@ -1375,7 +1375,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 8.5
+  m_Speed: 10.5
   m_Acceleration: 25
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1431,7 +1431,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 761d8e1f988ed2345a28312145c79c6e, type: 2}
+  - {fileID: 2100000, guid: c2e40fa84d53ccd428f640eac126b1fb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4303,7 +4303,7 @@ GameObject:
   - component: {fileID: 992433280}
   - component: {fileID: 992433279}
   - component: {fileID: 992433278}
-  - component: {fileID: 992433283}
+  - component: {fileID: 992433277}
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Enemy2
@@ -4311,6 +4311,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &992433277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992433276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b0c3f59a6ec6f4e966b0d8b1dd398b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 300
+  maxhealth: 300
 --- !u!195 &992433278
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4321,7 +4335,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7.7
+  m_Speed: 10.5
   m_Acceleration: 25
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -4377,7 +4391,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 761d8e1f988ed2345a28312145c79c6e, type: 2}
+  - {fileID: 2100000, guid: c2e40fa84d53ccd428f640eac126b1fb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4416,26 +4430,12 @@ Transform:
   m_GameObject: {fileID: 992433276}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.26, y: 0, z: 0}
-  m_LocalScale: {x: 4.348724, y: 3.512823, z: 4.7113104}
+  m_LocalPosition: {x: -10.26, y: 0, z: 34.81}
+  m_LocalScale: {x: 8.48731, y: 5.652598, z: 6.9463034}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 415669526}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &992433283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992433276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fb594fa9745b544bb9e35c7e4cf4fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 250
-  maxhealth: 250
 --- !u!1 &1005409183
 GameObject:
   m_ObjectHideFlags: 0
@@ -8677,7 +8677,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 8.5
+  m_Speed: 10.5
   m_Acceleration: 25
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -8733,7 +8733,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 761d8e1f988ed2345a28312145c79c6e, type: 2}
+  - {fileID: 2100000, guid: c2e40fa84d53ccd428f640eac126b1fb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
