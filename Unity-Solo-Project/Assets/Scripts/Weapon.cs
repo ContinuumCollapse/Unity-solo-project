@@ -128,7 +128,7 @@ public class Weapon : MonoBehaviour
     {
         if (other.tag == "Ammo")
         {
-            ammo += 10;    // or health ++; for one
+            ammo += 15;    
             Destroy(other.gameObject); //or other.gameObject.SetActive(false);
         }
 
