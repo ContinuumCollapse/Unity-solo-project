@@ -184,7 +184,7 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject); //or other.gameObject.SetActive(false);
 
         }
-        if ((other.tag == "exit") && (health < maxhealth))
+        if (other.tag == "exit")
         {
             Destroy(gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
