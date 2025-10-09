@@ -18,12 +18,13 @@ TagManager:
   - ui_clip
   - gm
   - pause
-  - killzone
   - ui_pause
   - weaponUI
   - Ammo
   - ui_gameOver
   - ui_nextLevel
+  - killzone
+  - exit
   layers:
   - Default
   - TransparentFX
