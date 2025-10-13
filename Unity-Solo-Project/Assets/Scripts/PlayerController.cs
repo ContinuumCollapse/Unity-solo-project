@@ -24,11 +24,11 @@ public class PlayerController : MonoBehaviour
     public float interactDistance = 1f;
     public float jumpRayDistance = 1.1f;
 
-    public int health = 5;
-    public int maxhealth = 5;
+    public int health = 600;
+    public int maxhealth = 800;
 
     public bool attacking = false;
-
+    public bool isSprinting = false;
 
     public void Start()
     {
@@ -168,6 +168,13 @@ public class PlayerController : MonoBehaviour
         if (currentWeapon)
         {
             currentWeapon.GetComponent<Weapon>().unequip();
+        }
+    }
+    public void Sprint()
+    {
+        if (!isSprinting)
+        {
+            speed = 23;       
         }
     }
     private void OnTriggerEnter(Collider other)

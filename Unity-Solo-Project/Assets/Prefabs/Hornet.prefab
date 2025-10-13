@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3784461024113870981}
   m_Layer: 0
   m_Name: Hornet
-  m_TagString: killzone
+  m_TagString: KillZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,9 +29,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8517688404906610849}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9999309, z: -0, w: -0.011757639}
+  m_LocalRotation: {x: -0, y: -0.9999309, z: 0, w: -0.011754382}
   m_LocalPosition: {x: -10.26, y: 0, z: 34.81}
-  m_LocalScale: {x: 8.48731, y: 5.652598, z: 6.9463034}
+  m_LocalScale: {x: 4.247814, y: 3.9551795, z: 3.689529}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

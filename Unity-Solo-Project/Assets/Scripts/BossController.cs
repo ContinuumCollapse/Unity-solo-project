@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class BossController : MonoBehaviour
 {
+    GameObject Portal;
     NavMeshAgent agent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -11,8 +12,9 @@ public class BossController : MonoBehaviour
     public int maxhealth = 150;
     void Start()
     {
+        Portal = GameObject.FindGameObjectWithTag("exit");
         agent = GetComponent<NavMeshAgent>();
-
+        Portal.SetActive(false);
 
     }
 
@@ -23,8 +25,9 @@ public class BossController : MonoBehaviour
 
         if (health <= 0)
         {
+            Portal.SetActive(true);
             Destroy(gameObject);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
     }
