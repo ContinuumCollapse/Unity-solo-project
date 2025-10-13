@@ -1,11 +1,15 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class BossController : MonoBehaviour
 {
     GameObject Portal;
     NavMeshAgent agent;
+    public GameObject Spider;
+    public Transform SPAWNPOINT;
+   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public int health = 150;
@@ -28,8 +32,26 @@ public class BossController : MonoBehaviour
             Portal.SetActive(true);
             Destroy(gameObject);
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            
+        }
+        if (health >= 1)
+        {
+            StartCoroutine(Cooldown());
         }
 
+
+    }
+
+    
+    IEnumerator Cooldown()
+    {
+        yield return new WaitForSeconds(10f);
+        
+        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        
+        Destroy(Spider, 2f);
+
+        StartCoroutine(Cooldown());
     }
     private void OnTriggerEnter(Collider other)
     {

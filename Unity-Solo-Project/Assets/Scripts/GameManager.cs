@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     GameObject weaponUI;
     GameObject pauseMenu;
-    
+
     Image healthBar;
     TextMeshProUGUI ammoCounter;
     TextMeshProUGUI clip;
@@ -101,4 +101,5 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+    
 }
