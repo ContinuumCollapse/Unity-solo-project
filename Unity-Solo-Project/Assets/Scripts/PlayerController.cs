@@ -15,11 +15,10 @@ public class PlayerController : MonoBehaviour
     public PlayerInput input;
     public Transform weaponSlot;
     public Weapon currentWeapon;
-
     float verticalMove;
     float horizontalMove;
 
-    public float speed = 5f;
+    public float speed = 11f;
     public float jumpHeight = 10f;
     public float interactDistance = 1f;
     public float jumpRayDistance = 1.1f;
@@ -172,10 +171,13 @@ public class PlayerController : MonoBehaviour
     }
     public void Sprint()
     {
+
         if (!isSprinting)
         {
-            speed = 23;       
+            speed = 23;
+
         }
+
     }
     private void OnTriggerEnter(Collider other)
     {

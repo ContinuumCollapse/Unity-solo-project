@@ -19,7 +19,10 @@ public class BossController : MonoBehaviour
         Portal = GameObject.FindGameObjectWithTag("exit");
         agent = GetComponent<NavMeshAgent>();
         Portal.SetActive(false);
-
+        if (health >= 1)
+        {
+            StartCoroutine(Cooldown());
+        }
     }
 
     // Update is called once per frame
@@ -34,10 +37,7 @@ public class BossController : MonoBehaviour
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             
         }
-        if (health >= 1)
-        {
-            StartCoroutine(Cooldown());
-        }
+       
 
 
     }
@@ -45,12 +45,22 @@ public class BossController : MonoBehaviour
     
     IEnumerator Cooldown()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(20f);
         
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        
-        Destroy(Spider, 2f);
+        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
 
+        yield return new WaitForSeconds(15f);
+
+        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        
         StartCoroutine(Cooldown());
     }
     private void OnTriggerEnter(Collider other)
