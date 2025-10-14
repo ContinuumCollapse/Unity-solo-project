@@ -4522,7 +4522,7 @@ GameObject:
   - component: {fileID: 2045660331}
   - component: {fileID: 2045660336}
   m_Layer: 0
-  m_Name: BOSS
+  m_Name: BOSS2
   m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
