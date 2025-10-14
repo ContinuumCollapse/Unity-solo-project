@@ -288,14 +288,14 @@ MonoBehaviour:
   holdToAttack: 1
   weaponID: 1
   weaponName: MachineGun
-  projLifespan: 1
+  projLifespan: 3
   projVelocity: 2000
-  reloadCooldown: 3
+  reloadCooldown: 1
   rof: 0.1
   fireModes: 0
   currentFireMode: 0
   clip: 9999
   clipSize: 9999
-  ammo: 20
-  maxAmmo: 200
-  ammoRefill: 20
+  ammo: 999
+  maxAmmo: 999
+  ammoRefill: 99
