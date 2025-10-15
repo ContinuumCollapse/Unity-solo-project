@@ -8,12 +8,13 @@ public class BossController2 : MonoBehaviour
     GameObject Portal;
     NavMeshAgent agent;
     public GameObject Spider;
+    public GameObject Spider2;
     public Transform SPAWNPOINT;
    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public int health = 500;
-    public int maxhealth = 9999;
+    public int maxhealth = 9999999;
     void Start()
     {
         Portal = GameObject.FindGameObjectWithTag("exit");
@@ -32,11 +33,12 @@ public class BossController2 : MonoBehaviour
 
         if (health <= 50)
         {
-            health += 9999;
+            health += 999999;
             Portal.SetActive(true);
             //Destroy(gameObject);
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             StartCoroutine(Rage());
+            StopCoroutine(Cooldown());
         }
        
 
@@ -45,21 +47,13 @@ public class BossController2 : MonoBehaviour
 
     IEnumerator Rage()
     {
-        yield return new WaitForSeconds(1f);
-
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-
         yield return new WaitForSeconds(2f);
 
+        Instantiate(Spider2, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(Spider2, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(Spider2, SPAWNPOINT.position, SPAWNPOINT.rotation);
 
         StartCoroutine(Rage());
     }

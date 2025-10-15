@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public Weapon currentWeapon;
     float verticalMove;
     float horizontalMove;
+    public AudioSource deathspeaker;
 
     public float speed = 11f;
     public float jumpHeight = 10f;
@@ -41,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-
+            deathspeaker = GetComponent<AudioSource>();
         }
 
         input = GetComponent<PlayerInput>();
@@ -59,6 +60,9 @@ public class PlayerController : MonoBehaviour
     {
         if (health <= 0)
             gameoverscreen.SetActive(true);
+        if (health <= 0)
+            if (!deathspeaker.isPlaying)
+            deathspeaker.Play();
 
         if (health <= 0)
         {
