@@ -7486,6 +7486,14 @@ PrefabInstance:
       propertyPath: maxAmmo
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 7484537009412302355, guid: 897d91587e7a7be4f9d787d8439c91fa, type: 3}
+      propertyPath: m_Volume
+      value: 0.138
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484537009412302355, guid: 897d91587e7a7be4f9d787d8439c91fa, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e76320ac0b1b484096fd52d3ebeb366, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

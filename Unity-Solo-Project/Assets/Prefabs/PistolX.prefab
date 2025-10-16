@@ -150,9 +150,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 3e76320ac0b1b484096fd52d3ebeb366, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.138
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -265,8 +265,8 @@ MonoBehaviour:
   currentFireMode: 0
   clip: 15
   clipSize: 30
-  ammo: 20
-  maxAmmo: 200
+  ammo: 100
+  maxAmmo: 2147483647
   ammoRefill: 20
 --- !u!1 &2529516722849969403
 GameObject:
