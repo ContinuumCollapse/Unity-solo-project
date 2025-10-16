@@ -59,10 +59,16 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         if (health <= 0)
+        {
             gameoverscreen.SetActive(true);
+        }
         if (health <= 0)
             if (!deathspeaker.isPlaying)
-            deathspeaker.Play();
+            { 
+                Destroy(GameObject.FindWithTag("MUSICBOX"));
+                deathspeaker.Play(); 
+            }
+            
 
         if (health <= 0)
         {

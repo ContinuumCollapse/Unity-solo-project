@@ -25,6 +25,7 @@ TagManager:
   - ui_nextLevel
   - killzone
   - exit
+  - MUSICBOX
   layers:
   - Default
   - TransparentFX
