@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
             if (!deathspeaker.isPlaying)
             { 
                 Destroy(GameObject.FindWithTag("MUSICBOX"));
+                Destroy(GameObject.FindWithTag("musicbox2"));
                 deathspeaker.Play(); 
             }
             
@@ -214,6 +215,10 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision) //enter is once every collison, stay is constant while collision is true
     {
         if (collision.gameObject.tag == "Hazard")
+        {
+            health -= 100;
+        }
+        if (collision.gameObject.tag == "Slash")
         {
             health -= 100;
         }

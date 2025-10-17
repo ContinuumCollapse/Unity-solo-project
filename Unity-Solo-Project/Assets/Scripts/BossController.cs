@@ -6,6 +6,7 @@ using System.Collections;
 public class BossController : MonoBehaviour
 {
     GameObject Portal;
+    GameObject musicbox;
     NavMeshAgent agent;
     public GameObject Spider;
     public Transform SPAWNPOINT;
@@ -17,6 +18,7 @@ public class BossController : MonoBehaviour
     void Start()
     {
         Portal = GameObject.FindGameObjectWithTag("exit");
+        musicbox = GameObject.FindGameObjectWithTag("MUSICBOX");
         agent = GetComponent<NavMeshAgent>();
         Portal.SetActive(false);
         if (health >= 1)
@@ -32,6 +34,7 @@ public class BossController : MonoBehaviour
 
         if (health <= 0)
         {
+            musicbox.SetActive(false);
             Portal.SetActive(true);
             Destroy(gameObject);
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -45,7 +48,7 @@ public class BossController : MonoBehaviour
     
     IEnumerator Cooldown()
     {
-        yield return new WaitForSeconds(20f);
+        yield return new WaitForSeconds(10f);
         
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);

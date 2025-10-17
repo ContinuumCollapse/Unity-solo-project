@@ -26,6 +26,8 @@ TagManager:
   - killzone
   - exit
   - MUSICBOX
+  - Slash
+  - musicbox2
   layers:
   - Default
   - TransparentFX
