@@ -28,6 +28,7 @@ TagManager:
   - MUSICBOX
   - Slash
   - musicbox2
+  - projSponge
   layers:
   - Default
   - TransparentFX

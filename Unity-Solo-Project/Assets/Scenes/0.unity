@@ -3458,7 +3458,7 @@ PrefabInstance:
     - target: {fileID: 7642363106472453671, guid: af772a03807913f46bbd192368175ecb, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1132391478}
     - target: {fileID: 7642363106472453671, guid: af772a03807913f46bbd192368175ecb, type: 3}
       propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2

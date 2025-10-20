@@ -84,6 +84,11 @@ public class MiniBossController : MonoBehaviour
             health--;
 
         }
+        if (collision.gameObject.tag == "projSponge")
+        {
+            health -= 2;
+
+        }
     }
     private void OnCollisionStay(Collision collision) //enter is once every collison, stay is constant while collision is true
     {

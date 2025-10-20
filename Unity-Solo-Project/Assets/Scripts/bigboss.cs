@@ -9,6 +9,7 @@ public class BossControllerFinal : MonoBehaviour
     GameObject musicbox;
     NavMeshAgent agent;
     public GameObject Spider;
+    public GameObject shock;
     public GameObject slash;
     public GameObject MiniBoss;
     public Transform SPAWNPOINT;
@@ -65,6 +66,14 @@ public class BossControllerFinal : MonoBehaviour
 
         Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
 
         yield return new WaitForSeconds(5f);
         
@@ -91,32 +100,23 @@ public class BossControllerFinal : MonoBehaviour
     }
     IEnumerator Cooldown()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
 
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
 
         yield return new WaitForSeconds(10f);
 
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(shock, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        Instantiate(shock, SPAWNPOINT.position, SPAWNPOINT.rotation);
 
         StartCoroutine(Cooldown());
     }
     IEnumerator Cooldown2()
     {
-        yield return new WaitForSeconds(2f);
-
-        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
-
         yield return new WaitForSeconds(1f);
 
+        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
 
         StartCoroutine(Cooldown2());
     }
@@ -131,6 +131,11 @@ public class BossControllerFinal : MonoBehaviour
         if (collision.gameObject.tag == "proj")
         {
             health--;
+
+        }
+        if (collision.gameObject.tag == "projSponge")
+        {
+            health -= 2;
 
         }
     }
