@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 
-public class SlashControl : MonoBehaviour
+public class ShockControl : MonoBehaviour
 {
     NavMeshAgent agent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,7 +23,7 @@ public class SlashControl : MonoBehaviour
     }
     IEnumerator Death()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(10f);
 
         Destroy(gameObject);
 

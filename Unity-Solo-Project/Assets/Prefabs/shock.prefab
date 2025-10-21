@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 936246002834649341}
   - component: {fileID: 6254205189905016157}
   - component: {fileID: 1514404106344969607}
-  - component: {fileID: 6904679926992273456}
+  - component: {fileID: 782757318292564245}
   m_Layer: 0
   m_Name: shock
   m_TagString: Slash
@@ -132,7 +132,7 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &6904679926992273456
+--- !u!114 &782757318292564245
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,6 +141,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3591495474790579437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ae048fef50f4d4ba1aa8ae672cddf1, type: 3}
+  m_Script: {fileID: 11500000, guid: b063cb97d1af5ed49bc9ebf0f1956a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

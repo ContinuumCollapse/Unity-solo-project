@@ -11,6 +11,7 @@ public class BossControllerFinal : MonoBehaviour
     public GameObject Spider;
     public GameObject shock;
     public GameObject slash;
+    public GameObject Boss;
     public GameObject MiniBoss;
     public Transform SPAWNPOINT;
     public Transform SPAWNPOINT2;
@@ -18,8 +19,8 @@ public class BossControllerFinal : MonoBehaviour
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    public int health = 750;
-    public int maxhealth = 1500;
+    public int health = 1200;
+    public int maxhealth = 2000;
     void Start()
     {
         Portal = GameObject.FindGameObjectWithTag("exit");
@@ -62,63 +63,49 @@ public class BossControllerFinal : MonoBehaviour
 
     IEnumerator Rage()
     {
-        yield return new WaitForSeconds(2f);
+        health += 100;
 
-        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
-
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(120f);
         
-        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
-        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
-        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
-        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
-        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
-        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
-
-        yield return new WaitForSeconds(100f);
-
+       
         StartCoroutine(Rage());
     }
     IEnumerator Phase()
     {
-        StopCoroutine(Cooldown());
-        StopCoroutine(Cooldown());
-        StopCoroutine(Cooldown());
-        health += 1500;
+        Instantiate(Boss, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        health += 2500;
         musicbox.SetActive(false);
         musicboxtwo.SetActive(true);
         yield return new WaitForSeconds(10000000f);
     }
     IEnumerator Cooldown()
     {
-        yield return new WaitForSeconds(2f);
+        if (!phaseTriggered)
+        {
+            yield return new WaitForSeconds(5f);
 
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
+            Instantiate(shock, SPAWNPOINT.position, SPAWNPOINT.rotation);
+            Instantiate(shock, SPAWNPOINT.position, SPAWNPOINT.rotation);
+            Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
 
-        yield return new WaitForSeconds(10f);
-
-        Instantiate(shock, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(shock, SPAWNPOINT.position, SPAWNPOINT.rotation);
-
-        StartCoroutine(Cooldown());
+            yield return new WaitForSeconds(30f);
+            StartCoroutine(Cooldown());
+        }
+           
     }
     IEnumerator Cooldown2()
     {
-        yield return new WaitForSeconds(1f);
+        if (!phaseTriggered)
+        {
+            yield return new WaitForSeconds(1f);
 
-        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
+            Instantiate(shock, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
 
-        StartCoroutine(Cooldown2());
+            yield return new WaitForSeconds(4f);
+
+            StartCoroutine(Cooldown2());
+        }
+            
     }
     private void OnTriggerEnter(Collider other)
     {

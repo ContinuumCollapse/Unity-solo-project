@@ -98,9 +98,9 @@ GameObject:
   - component: {fileID: 2387252155807534941}
   - component: {fileID: 6273058764410857752}
   - component: {fileID: 7177719567787704739}
-  - component: {fileID: 4431142871544459800}
+  - component: {fileID: 228908785757604992}
   m_Layer: 0
-  m_Name: BIGBOSS
+  m_Name: CloneFake
   m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7fe30b60df9021f4c9526e7fc265cb24, type: 2}
+  - {fileID: 2100000, guid: d5030ac6d13dbe640ab1b9d5a5e38492, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -218,7 +218,7 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &4431142871544459800
+--- !u!114 &228908785757604992
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,16 +227,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 9044886643874203994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c91b647de896c354598d723aea93d0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 93857c1d01f93b545a1fa5b9fa9e3958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spider: {fileID: 3591495474790579437, guid: 2e4dd1e3e18f21342b594d306e64a045, type: 3}
-  shock: {fileID: 3591495474790579437, guid: 4f1663819607e5747889b248626b51eb, type: 3}
   slash: {fileID: 3591495474790579437, guid: 3945bd866c40cd34687c36f6a45187e0, type: 3}
-  Boss: {fileID: 0}
-  MiniBoss: {fileID: 3438325281446625824, guid: c36f6c5acf933da4d99017ca810e7a1a, type: 3}
-  SPAWNPOINT: {fileID: 8422050986183082842}
-  SPAWNPOINT2: {fileID: 6550110381457336322}
-  phaseTriggered: 0
-  health: 1200
-  maxhealth: 9000
+  SPAWNPOINT: {fileID: 6550110381457336322}
+  SPAWNPOINT2: {fileID: 8422050986183082842}
+  health: 600
+  maxhealth: 600

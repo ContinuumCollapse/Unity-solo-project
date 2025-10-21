@@ -43,6 +43,7 @@ public class BossController2 : MonoBehaviour
         {
             phaseTriggered = true;
             StartCoroutine(Rage());
+            StartCoroutine(Rage2());
             StartCoroutine(Phase());
 
         }
@@ -77,6 +78,22 @@ public class BossController2 : MonoBehaviour
         yield return new WaitForSeconds(100f);
 
         StartCoroutine(Rage());
+    }
+    IEnumerator Rage2()
+    {
+
+        yield return new WaitForSeconds(9f);
+        
+        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
+        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
+        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
+        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
+        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
+        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
+
+        yield return new WaitForSeconds(1f);
+
+        StartCoroutine(Rage2());
     }
     IEnumerator Phase()
     {
