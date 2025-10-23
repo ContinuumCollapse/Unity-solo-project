@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
 
     public GameObject projectile;
     public AudioSource weaponSpeaker;
+    public AudioSource pickupSpeaker;
     public Transform firePoint;
     public Camera firingDirection;
 
@@ -93,6 +94,7 @@ public class Weapon : MonoBehaviour
 
         firingDirection = Camera.main;
         this.player = player;
+        pickupSpeaker.Play();
     }
 
     public void unequip()
