@@ -20,7 +20,7 @@ public class BossControllerFinal : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public int health = 1000;
-    public int maxhealth = 1600;
+    public int maxhealth = 1500;
     void Start()
     {
         Portal = GameObject.FindGameObjectWithTag("exit");
@@ -64,7 +64,7 @@ public class BossControllerFinal : MonoBehaviour
     IEnumerator Rage()
     {
         health += 100;
-        Instantiate(Boss, SPAWNPOINT.position, SPAWNPOINT.rotation);
+        
         yield return new WaitForSeconds(120f);
         
        
@@ -73,7 +73,7 @@ public class BossControllerFinal : MonoBehaviour
     IEnumerator Phase()
     {
         Instantiate(Boss, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        health += 1650;
+        health += 1450;
         musicbox.SetActive(false);
         musicboxtwo.SetActive(true);
         yield return new WaitForSeconds(10000000f);
@@ -82,13 +82,12 @@ public class BossControllerFinal : MonoBehaviour
     {
         if (!phaseTriggered)
         {
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(10f);
 
             Instantiate(shock, SPAWNPOINT.position, SPAWNPOINT.rotation);
             Instantiate(shock, SPAWNPOINT.position, SPAWNPOINT.rotation);
-            Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
-
-            yield return new WaitForSeconds(30f);
+            
+            yield return new WaitForSeconds(10);
             StartCoroutine(Cooldown());
         }
            
@@ -99,6 +98,8 @@ public class BossControllerFinal : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         Instantiate(shock, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
+        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
+        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
 
         yield return new WaitForSeconds(3f);
 
