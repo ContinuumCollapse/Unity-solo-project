@@ -96,11 +96,11 @@ public class BossControllerFinal : MonoBehaviour
     IEnumerator Cooldown2()
     {
        
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
 
         Instantiate(shock, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
 
         StartCoroutine(Cooldown2());
      
