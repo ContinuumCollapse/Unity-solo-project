@@ -100,7 +100,7 @@ public class BossController2 : MonoBehaviour
         StopCoroutine(Cooldown());
         StopCoroutine(Cooldown());
         StopCoroutine(Cooldown());
-        health += 950;
+        health += 800;
         musicbox.SetActive(false);
         musicboxtwo.SetActive(true);
         yield return new WaitForSeconds(10000000f);
@@ -115,7 +115,7 @@ public class BossController2 : MonoBehaviour
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(20f);
 
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);

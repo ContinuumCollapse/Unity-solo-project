@@ -6141,7 +6141,7 @@ MonoBehaviour:
   SPAWNPOINT2: {fileID: 1677123681}
   phaseTriggered: 0
   health: 500
-  maxhealth: 1000
+  maxhealth: 850
 --- !u!1 &2134336706
 GameObject:
   m_ObjectHideFlags: 0
