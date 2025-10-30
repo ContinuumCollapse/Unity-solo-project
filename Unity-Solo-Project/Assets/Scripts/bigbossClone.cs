@@ -8,7 +8,7 @@ public class BossControllerFinalClone : MonoBehaviour
     public GameObject slash;
     public Transform SPAWNPOINT;
     public Transform SPAWNPOINT2;
-
+    public AudioSource slashSpeaker;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public int health = 600;
@@ -48,7 +48,7 @@ public class BossControllerFinalClone : MonoBehaviour
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
-
+        slashSpeaker.Play();
         yield return new WaitForSeconds(3f);
         
        
@@ -61,7 +61,7 @@ public class BossControllerFinalClone : MonoBehaviour
 
         Instantiate(slash, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(slash, SPAWNPOINT.position, SPAWNPOINT.rotation);
-
+        slashSpeaker.Play();
         yield return new WaitForSeconds(2);
        
         StartCoroutine(Cooldown());

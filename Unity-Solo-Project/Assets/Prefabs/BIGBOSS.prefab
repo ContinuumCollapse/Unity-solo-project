@@ -1,5 +1,90 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5992303669373750507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5068883746316775337}
+  - component: {fileID: 6253737330113060689}
+  - component: {fileID: 5473574789078367925}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5068883746316775337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5992303669373750507}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 4.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8422050986183082842}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &6253737330113060689
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5992303669373750507}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &5473574789078367925
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5992303669373750507}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7833185555796884063
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,10 +201,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.9990581, z: 0, w: 0.043392766}
   m_LocalPosition: {x: 7.8658943, y: 7.76, z: 48.61579}
-  m_LocalScale: {x: 4.0928545, y: 5.8590784, z: 2.5838373}
+  m_LocalScale: {x: 13.568631, y: 5.8590784, z: 2.5838373}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6550110381457336322}
+  - {fileID: 5068883746316775337}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -175.026, z: 0}
 --- !u!33 &3305438615305723088
@@ -153,7 +239,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7fe30b60df9021f4c9526e7fc265cb24, type: 2}
+  - {fileID: 2100000, guid: 6f98690a544b8b14c9c205dba31f4446, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -206,8 +292,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 44
-  m_Acceleration: 25
+  m_Speed: 22
+  m_Acceleration: 12
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -233,10 +319,10 @@ MonoBehaviour:
   Spider: {fileID: 3591495474790579437, guid: 2e4dd1e3e18f21342b594d306e64a045, type: 3}
   shock: {fileID: 3591495474790579437, guid: 4f1663819607e5747889b248626b51eb, type: 3}
   slash: {fileID: 3591495474790579437, guid: 3945bd866c40cd34687c36f6a45187e0, type: 3}
-  Boss: {fileID: 0}
+  Boss: {fileID: 9044886643874203994, guid: 615392d5769400f45b2dd07fd2bc895b, type: 3}
   MiniBoss: {fileID: 3438325281446625824, guid: c36f6c5acf933da4d99017ca810e7a1a, type: 3}
   SPAWNPOINT: {fileID: 8422050986183082842}
-  SPAWNPOINT2: {fileID: 6550110381457336322}
+  SPAWNPOINT2: {fileID: 5068883746316775337}
   phaseTriggered: 0
-  health: 1200
-  maxhealth: 9000
+  health: 1000
+  maxhealth: 1500

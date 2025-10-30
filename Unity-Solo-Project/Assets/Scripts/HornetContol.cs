@@ -14,7 +14,8 @@ public class BossController2 : MonoBehaviour
     public Transform SPAWNPOINT;
     public Transform SPAWNPOINT2;
     public bool phaseTriggered;
-
+    public AudioSource summonSpeaker;
+    public AudioSource slashSpeaker;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public int health = 500;
@@ -65,7 +66,7 @@ public class BossController2 : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         Instantiate(MiniBoss, SPAWNPOINT.position, SPAWNPOINT.rotation);
-
+        summonSpeaker.Play();
         yield return new WaitForSeconds(5f);
         
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
@@ -74,7 +75,7 @@ public class BossController2 : MonoBehaviour
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
-
+        slashSpeaker.Play();
         yield return new WaitForSeconds(100f);
 
         StartCoroutine(Rage());
@@ -90,7 +91,7 @@ public class BossController2 : MonoBehaviour
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
-
+        slashSpeaker.Play();
         yield return new WaitForSeconds(1f);
 
         StartCoroutine(Rage2());
@@ -114,7 +115,7 @@ public class BossController2 : MonoBehaviour
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-
+        summonSpeaker.Play();
         yield return new WaitForSeconds(20f);
 
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
@@ -122,7 +123,7 @@ public class BossController2 : MonoBehaviour
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-
+        summonSpeaker.Play();
         StartCoroutine(Cooldown());
     }
     IEnumerator Cooldown2()
@@ -130,7 +131,7 @@ public class BossController2 : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
-
+        slashSpeaker.Play();
         yield return new WaitForSeconds(1f);
 
 

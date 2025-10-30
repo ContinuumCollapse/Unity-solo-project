@@ -16,7 +16,8 @@ public class BossControllerFinal : MonoBehaviour
     public Transform SPAWNPOINT;
     public Transform SPAWNPOINT2;
     public bool phaseTriggered;
-
+    public AudioSource slashSpeaker;
+    public AudioSource shockSpeaker;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public int health = 1000;
@@ -86,7 +87,7 @@ public class BossControllerFinal : MonoBehaviour
 
             Instantiate(shock, SPAWNPOINT.position, SPAWNPOINT.rotation);
             Instantiate(shock, SPAWNPOINT.position, SPAWNPOINT.rotation);
-            
+            shockSpeaker.Play();
             yield return new WaitForSeconds(10);
             StartCoroutine(Cooldown());
         }
@@ -100,7 +101,8 @@ public class BossControllerFinal : MonoBehaviour
         Instantiate(shock, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
-
+        shockSpeaker.Play();
+        slashSpeaker.Play();
         yield return new WaitForSeconds(3f);
 
         StartCoroutine(Cooldown2());

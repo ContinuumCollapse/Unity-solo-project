@@ -6,6 +6,7 @@ using System.Collections;
 public class BossController : MonoBehaviour
 {
     GameObject Portal;
+    public AudioSource summonSpeaker;
     GameObject musicbox;
     NavMeshAgent agent;
     public GameObject Spider;
@@ -55,7 +56,7 @@ public class BossController : MonoBehaviour
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-
+        summonSpeaker.Play();
         yield return new WaitForSeconds(15f);
 
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
@@ -63,7 +64,7 @@ public class BossController : MonoBehaviour
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        
+        summonSpeaker.Play();
         StartCoroutine(Cooldown());
     }
     private void OnTriggerEnter(Collider other)
