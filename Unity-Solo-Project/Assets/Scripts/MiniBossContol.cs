@@ -7,6 +7,7 @@ public class MiniBossController : MonoBehaviour
 {
     GameObject Portal;
     GameObject musicbox;
+    public AudioSource summonSpeaker;
     NavMeshAgent agent;
     public GameObject Spider;
     public Transform SPAWNPOINT;
@@ -52,7 +53,7 @@ public class MiniBossController : MonoBehaviour
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-
+        summonSpeaker.Play();
         yield return new WaitForSeconds(15f);
 
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
@@ -60,7 +61,7 @@ public class MiniBossController : MonoBehaviour
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        
+        summonSpeaker.Play();
         StartCoroutine(Cooldown());
     }
     private void OnTriggerEnter(Collider other)
