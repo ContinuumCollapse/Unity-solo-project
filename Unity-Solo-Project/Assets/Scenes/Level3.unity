@@ -2727,7 +2727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7341738044363481342, guid: 0d714ca51ad736744b099ef845b763cd, type: 3}
       propertyPath: projLifespan
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7341738044363481342, guid: 0d714ca51ad736744b099ef845b763cd, type: 3}
       propertyPath: projVelocity

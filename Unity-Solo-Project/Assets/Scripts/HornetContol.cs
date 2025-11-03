@@ -76,7 +76,7 @@ public class BossController2 : MonoBehaviour
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
         slashSpeaker.Play();
-        yield return new WaitForSeconds(100f);
+        yield return new WaitForSeconds(200f);
 
         StartCoroutine(Rage());
     }
@@ -89,10 +89,8 @@ public class BossController2 : MonoBehaviour
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
-        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
-        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
         slashSpeaker.Play();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
 
         StartCoroutine(Rage2());
     }
@@ -112,15 +110,9 @@ public class BossController2 : MonoBehaviour
 
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         summonSpeaker.Play();
         yield return new WaitForSeconds(20f);
 
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
-        Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         summonSpeaker.Play();

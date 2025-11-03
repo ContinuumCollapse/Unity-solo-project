@@ -7559,6 +7559,14 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6398971777789543836, guid: 897d91587e7a7be4f9d787d8439c91fa, type: 3}
+      propertyPath: projLifespan
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398971777789543836, guid: 897d91587e7a7be4f9d787d8439c91fa, type: 3}
+      propertyPath: projVelocity
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398971777789543836, guid: 897d91587e7a7be4f9d787d8439c91fa, type: 3}
       propertyPath: pickupSpeaker
       value: 
       objectReference: {fileID: 932700212}

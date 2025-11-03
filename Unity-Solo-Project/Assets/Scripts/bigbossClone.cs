@@ -49,7 +49,7 @@ public class BossControllerFinalClone : MonoBehaviour
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
         Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
         slashSpeaker.Play();
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(20f);
         
        
         StartCoroutine(Rage());
@@ -62,7 +62,7 @@ public class BossControllerFinalClone : MonoBehaviour
         Instantiate(slash, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(slash, SPAWNPOINT.position, SPAWNPOINT.rotation);
         slashSpeaker.Play();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(15);
        
         StartCoroutine(Cooldown());
 

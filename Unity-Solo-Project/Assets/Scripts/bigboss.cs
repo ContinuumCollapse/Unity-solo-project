@@ -99,10 +99,7 @@ public class BossControllerFinal : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         Instantiate(shock, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
-        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
-        Instantiate(slash, SPAWNPOINT2.position, SPAWNPOINT2.rotation);
         shockSpeaker.Play();
-        slashSpeaker.Play();
         yield return new WaitForSeconds(3f);
 
         StartCoroutine(Cooldown2());
