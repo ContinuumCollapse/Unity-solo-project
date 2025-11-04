@@ -7560,11 +7560,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6398971777789543836, guid: 897d91587e7a7be4f9d787d8439c91fa, type: 3}
       propertyPath: projLifespan
-      value: 0.9
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6398971777789543836, guid: 897d91587e7a7be4f9d787d8439c91fa, type: 3}
       propertyPath: projVelocity
-      value: 6000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 6398971777789543836, guid: 897d91587e7a7be4f9d787d8439c91fa, type: 3}
       propertyPath: pickupSpeaker
@@ -7595,6 +7595,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 415669526}
     m_Modifications:
+    - target: {fileID: 3124438891723712454, guid: ff84fc4576c77a740b3703b295049ce5, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3124438891723712454, guid: ff84fc4576c77a740b3703b295049ce5, type: 3}
+      propertyPath: maxhealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3124438891723712454, guid: ff84fc4576c77a740b3703b295049ce5, type: 3}
       propertyPath: summonSpeaker
       value: 

@@ -3438,11 +3438,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6398971777789543836, guid: 897d91587e7a7be4f9d787d8439c91fa, type: 3}
       propertyPath: projLifespan
-      value: 0.9
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6398971777789543836, guid: 897d91587e7a7be4f9d787d8439c91fa, type: 3}
       propertyPath: projVelocity
-      value: 6000
+      value: 12500
       objectReference: {fileID: 0}
     - target: {fileID: 6398971777789543836, guid: 897d91587e7a7be4f9d787d8439c91fa, type: 3}
       propertyPath: pickupSpeaker

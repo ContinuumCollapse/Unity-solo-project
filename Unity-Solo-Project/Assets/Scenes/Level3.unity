@@ -2727,11 +2727,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7341738044363481342, guid: 0d714ca51ad736744b099ef845b763cd, type: 3}
       propertyPath: projLifespan
-      value: 1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7341738044363481342, guid: 0d714ca51ad736744b099ef845b763cd, type: 3}
       propertyPath: projVelocity
-      value: 6000
+      value: 12500
       objectReference: {fileID: 0}
     - target: {fileID: 7341738044363481342, guid: 0d714ca51ad736744b099ef845b763cd, type: 3}
       propertyPath: pickupSpeaker
@@ -5620,11 +5620,11 @@ PrefabInstance:
       objectReference: {fileID: 9044886643874203994, guid: 615392d5769400f45b2dd07fd2bc895b, type: 3}
     - target: {fileID: 4431142871544459800, guid: 9e43d3bb4d4a36e4193dd3877956a38c, type: 3}
       propertyPath: health
-      value: 1000
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4431142871544459800, guid: 9e43d3bb4d4a36e4193dd3877956a38c, type: 3}
       propertyPath: maxhealth
-      value: 1500
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4431142871544459800, guid: 9e43d3bb4d4a36e4193dd3877956a38c, type: 3}
       propertyPath: SPAWNPOINT2

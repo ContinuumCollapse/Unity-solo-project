@@ -20,8 +20,8 @@ public class BossControllerFinal : MonoBehaviour
     public AudioSource shockSpeaker;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    public int health = 1000;
-    public int maxhealth = 1500;
+    public int health = 500;
+    public int maxhealth = 1000;
     void Start()
     {
         Portal = GameObject.FindGameObjectWithTag("exit");

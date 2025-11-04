@@ -235,8 +235,8 @@ MonoBehaviour:
   SPAWNPOINT: {fileID: 6550110381457336322}
   SPAWNPOINT2: {fileID: 8422050986183082842}
   slashSpeaker: {fileID: 3446154903205949384}
-  health: 600
-  maxhealth: 600
+  health: 300
+  maxhealth: 300
 --- !u!82 &3446154903205949384
 AudioSource:
   m_ObjectHideFlags: 0

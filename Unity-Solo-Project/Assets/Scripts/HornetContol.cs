@@ -18,8 +18,8 @@ public class BossController2 : MonoBehaviour
     public AudioSource slashSpeaker;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    public int health = 500;
-    public int maxhealth = 1050;
+    public int health = 250;
+    public int maxhealth = 550;
     void Start()
     {
         Portal = GameObject.FindGameObjectWithTag("exit");
@@ -99,14 +99,14 @@ public class BossController2 : MonoBehaviour
         StopCoroutine(Cooldown());
         StopCoroutine(Cooldown());
         StopCoroutine(Cooldown());
-        health += 800;
+        health += 500;
         musicbox.SetActive(false);
         musicboxtwo.SetActive(true);
         yield return new WaitForSeconds(10000000f);
     }
     IEnumerator Cooldown()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(15f);
 
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);
         Instantiate(Spider, SPAWNPOINT.position, SPAWNPOINT.rotation);

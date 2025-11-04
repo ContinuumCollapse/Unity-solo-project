@@ -3570,11 +3570,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6398971777789543836, guid: 14bcdda82125a444b8b912588a3848e0, type: 3}
       propertyPath: projLifespan
-      value: 0.9
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6398971777789543836, guid: 14bcdda82125a444b8b912588a3848e0, type: 3}
       propertyPath: projVelocity
-      value: 6000
+      value: 12500
       objectReference: {fileID: 0}
     - target: {fileID: 6398971777789543836, guid: 14bcdda82125a444b8b912588a3848e0, type: 3}
       propertyPath: pickupSpeaker
@@ -6368,8 +6368,8 @@ MonoBehaviour:
   phaseTriggered: 0
   summonSpeaker: {fileID: 2045660337}
   slashSpeaker: {fileID: 1677123685}
-  health: 500
-  maxhealth: 850
+  health: 250
+  maxhealth: 550
 --- !u!82 &2045660337
 AudioSource:
   m_ObjectHideFlags: 0

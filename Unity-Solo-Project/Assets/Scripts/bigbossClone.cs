@@ -11,8 +11,8 @@ public class BossControllerFinalClone : MonoBehaviour
     public AudioSource slashSpeaker;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    public int health = 600;
-    public int maxhealth = 600;
+    public int health = 300;
+    public int maxhealth = 300;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
